@@ -36,3 +36,75 @@
     transform: rotate(360deg);
   }
 }
+
+.sticky{
+position: absolute;
+top: 0;
+}
+
+.red{
+  border: 1pt solid red;
+}
+
+.myNav{
+  height: 100px;
+  width: 100%;
+ 
+}
+
+
+.floatL{
+  float: left;
+  margin-left: 50px;
+  height: 100%;
+  clear: right;
+  
+}
+
+.floatR{
+
+  float: right;
+
+  height: 100%;
+}
+
+.searchDiv{
+ border: 2pt solid red;
+height: 100%;
+}
+
+
+
+.searchInput{
+  position: relative;
+  
+  
+}
+
+.logoDiv{
+  height: 100px;
+  overflow: hidden;
+  
+  
+}
+
+.cen{
+  text-align: center;
+}
+
+.logoImg{
+  width: 100%;
+  height: auto;
+ 
+}
+
+.navItem{
+  display: inline-block;
+}
+
+.w{
+  width: 100%;
+  margin: 0;
+  margin-right: 0;
+  padding: 0;
+}
