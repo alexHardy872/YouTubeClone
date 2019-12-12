@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import youtubeLogo2 from '../Images/youtubeLogo2.jpg';
 
 const SearchBar = (props) => {
+
+    const [value, setValue] = useState('');
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        if(!value) return;
+        props.addSearchTerm(value);
+
+
+    }
 
     return (
         <div className="mx-auto sticky ">
@@ -17,8 +27,8 @@ const SearchBar = (props) => {
 
                     </div> */}
                     <div className="searchDiv">
-                        <form>
-                            <input className="searchInput "type="text" name="search" placeholder="Search..."></input>
+                        <form onSubmit={handleSubmit}>
+                            <input className="searchInput "type="text" name="search" placeholder="Search..." value={value} onChange={e => setValue(e.target.value)}></input>
                             <button className="searchButton" type="submit" >Search</button>
                         </form>
                     </div>

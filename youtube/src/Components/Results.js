@@ -14,7 +14,7 @@ const Results = (props) => {
                 
                 <div className="col-lg-8 bg-gray">
                  <div className="container results-block-main">
-                    <VideoResult/>
+                    <VideoResult onClick={props.setCurrent}/>
                     <VideoResult/>
                     <VideoResult/>
                     <VideoResult/>

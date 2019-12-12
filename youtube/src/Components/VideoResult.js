@@ -8,7 +8,7 @@ const VideoResult = (props) => {
             <div className="videoResultInfo">
                 <span className="vid-result-title spanblock"> Video Title</span>
 
-                <span className="vid-result-under spanblock"> channel / views / released </span>
+                <span className="vid-result-under spanblock"> channel &#8226; views &#8226; released </span>
 
                 <span className="vid-result-under spanblock"> Breif video description placeholder HERE!</span>
             </div>

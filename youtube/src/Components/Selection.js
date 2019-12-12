@@ -6,7 +6,7 @@ const Selection = (props) => {
         <div className="container-fluid pad bg-gray tall">
             <div className="row">
                 <div className="col-sm-1"> </div>
-                <div className="col-lg-7 red">
+                <div className="col-lg-7">
                     <div className="video-container">
                     <iframe 
                         width="840"
@@ -29,7 +29,7 @@ const Selection = (props) => {
                           <h2> Comments</h2>
                       </div>
                 </div>
-                <div className="col-sm-3 red">
+                <div className="col-sm-3">
                         <h2> related videos playlist?</h2>
                 </div>
                 <div className="col-sm-1"></div>
