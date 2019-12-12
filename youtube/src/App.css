@@ -37,74 +37,188 @@
   }
 }
 
+.tall{
+  height: 100%;
+}
+
+body{
+  background-color: whitesmoke;
+}
+
 .sticky{
-position: absolute;
+position: fixed;
 top: 0;
+z-index: 1000;
+background-color: white;
+
+}
+
+.spacer{
+  height: 60px;
 }
 
 .red{
   border: 1pt solid red;
 }
 
-.myNav{
-  height: 100px;
-  width: 100%;
- 
-}
-
-
-.floatL{
-  float: left;
-  margin-left: 50px;
-  height: 100%;
-  clear: right;
-  
-}
-
-.floatR{
-
-  float: right;
-
-  height: 100%;
-}
 
 .searchDiv{
- border: 2pt solid red;
 height: 100%;
+ text-align: center;
+padding-left: 5%;
+padding-top: 8px;
+
 }
 
-
+.searchButton{
+  height: 30px;
+  width: 10%;
+}
 
 .searchInput{
   position: relative;
+  width: 60%;
+  height: 30px;
+  margin-top: 10px;
   
   
 }
 
 .logoDiv{
-  height: 100px;
-  overflow: hidden;
-  
+  height: fit-content; 
   
 }
 
-.cen{
-  text-align: center;
-}
 
 .logoImg{
-  width: 100%;
+  width: 80%;
   height: auto;
+  margin-top: 10px;
+  
+  
  
+}
+
+.padz{
+ 
+  z-index: 1000;
+}
+
+.pad{
+  padding-top: 30px;
 }
 
 .navItem{
   display: inline-block;
 }
 
-.w{
-  width: 100%;
-  margin: 0;
-  margin-right: 0;
-  padding: 0;
+.bg-white{
+  background-color: white;
 }
+
+.bg-gray{
+  background-color: whitesmoke;
+}
+
+.nav-block{
+  float: left;
+  position: fixed;
+  width: 240px;
+  height: 500px;
+  padding-top: 40px;
+  text-align: left;
+  padding-left: 20px;
+  overflow-y: scroll;
+}
+
+
+
+.side-nav-head{
+  color: gray;
+  font-size: 12pt;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  display: block;
+  margin-left: 50px;
+}
+
+.side-nav-head-ind{
+  color: gray;
+  font-size: 12pt;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: silver;
+  border: 2px solid rgba(255, 208, 0, 0);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b300006c; 
+}
+
+.results-block-main{
+  padding-top: 40px;
+}
+
+.thumbNail{
+  height: 170px;
+  width: 280px;
+  background-color: red;
+ 
+  float: left;
+}
+.resultContainer{
+  padding: 10px;
+  height: 190px;
+  width: 100%;
+  text-align: left;
+}
+
+.videoResultInfo{
+  display: inline-block;
+  height: 190px;
+  width: 50%;
+  margin-left: 20px;
+  
+}
+
+.spanblock{
+display: block;
+}
+
+.vid-result-title{
+font-size: 18pt;
+}
+
+.vid-result-under{
+font-size: 12pt;
+color: gray;
+}
+
+.videoInfo{
+  text-align: left;
+  
+}
+
+.video-container{
+padding-left: 20px;
+}
+
+
