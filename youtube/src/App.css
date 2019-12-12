@@ -184,6 +184,18 @@ padding-top: 8px;
  
   float: left;
 }
+
+.thumbnail-image{
+  height: 100%;
+  width: 100%;
+ 
+
+}
+
+.thumbnail-image:hover{
+cursor: pointer;
+}
+
 .resultContainer{
   padding: 10px;
   height: 190px;

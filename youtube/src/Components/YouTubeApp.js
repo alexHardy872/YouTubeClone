@@ -27,6 +27,8 @@ const YouTubeApp = (props) => {
     }
 
     const addCurrent = video => {
+        console.log("add current video hit with "+video.snippet.title)
+        debugger;
         setCurrent(video);
     }
 
@@ -74,7 +76,7 @@ const YouTubeApp = (props) => {
     };
 
     const fullVideoInfoArray = async (videos) => {
-        debugger;
+        console.log(videos);
         let newArr = [];
         for(let i = 0 ; i < videos.length ; i++){
             let vidId = videos[i].id;
@@ -111,7 +113,7 @@ const YouTubeApp = (props) => {
             <div className="spacer"></div>
             
             {currentVid === null &&
-                <Results vidList={getVidList2()} setCurrent={addCurrent}/>                       
+                <Results vidList={getVidList2()} addCurrent={addCurrent}/>                       
             }
             {currentVid !== null &&
                 <Selection currentVid={currentVid}/>

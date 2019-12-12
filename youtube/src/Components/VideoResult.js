@@ -9,7 +9,10 @@ const VideoResult = (props) => {
 
     return (
         <div className="resultContainer">
-            <div className="thumbNail"></div>
+            <div className="thumbNail" onClick={() => props.addCurrent(props.video)}>
+                
+                <img className="thumbnail-image" src={props.video.snippet.thumbnails.high.url} />
+            </div>
             <div className="videoResultInfo">
                 <span className="vid-result-title spanblock">{props.video.snippet.title}</span>
 
