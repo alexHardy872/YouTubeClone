@@ -4,6 +4,20 @@ import SideNav from './SideNav.js';
 
 const Results = (props) => {
 
+    const renderItems = (arr) => {
+       
+        if(arr){
+            return (
+                props.vidList.vidList2.map((video) => {
+                    return <VideoResult onClick={props.addCurrent} video={video} key={video.index}/>
+                    })
+            )
+        }
+        else{
+            return <h2>Search to populate the list!</h2>
+        }
+    }
+
     return (
 
         <div className="container-fluid">
@@ -14,15 +28,25 @@ const Results = (props) => {
                 
                 <div className="col-lg-8 bg-gray">
                  <div className="container results-block-main">
-                    <VideoResult onClick={props.setCurrent}/>
-                    <VideoResult/>
-                    <VideoResult/>
-                    <VideoResult/>
-                    <VideoResult/>
-                    <VideoResult/>
-                    <VideoResult/>
-                    <VideoResult/>
-                    <VideoResult/>
+
+                {renderItems(props.vidList)}
+
+                 {/* {props.vidList !== null &&
+                    console.log(props.vidList),
+                    props.vidList.map((index, snippet) => {
+                        return <VideoResult onClick={props.addCurrent} video={snippet} key={index}/>
+                        })
+
+                 }
+                 {props.vidList === null &&
+                    <h1>Search to populate</h1>
+
+                 } */}
+          
+                 
+
+                    
+                  
 
                  </div>
             

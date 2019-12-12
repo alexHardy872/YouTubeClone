@@ -208,8 +208,13 @@ font-size: 18pt;
 }
 
 .vid-result-under{
-font-size: 12pt;
+font-size: 8pt;
 color: gray;
+}
+
+.description-block{
+  height: 20%;
+  overflow: hidden;
 }
 
 .videoInfo{
