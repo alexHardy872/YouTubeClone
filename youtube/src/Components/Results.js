@@ -9,7 +9,7 @@ const Results = (props) => {
         if(arr){
             return (
                 props.vidList.vidList2.map((video) => {
-                    return <VideoResult addCurrent={props.addCurrent} video={video} key={video.id.videoId}/>
+                    return <VideoResult addCurrent={props.addCurrent} video={video} key={video.id}/>
                     })
             )
         }

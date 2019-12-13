@@ -27,8 +27,7 @@ const YouTubeApp = (props) => {
     }
 
     const addCurrent = video => {
-        console.log("add current video hit with "+video.snippet.title)
-        debugger;
+        console.log("add current video hit with "+video.snippet.title);
         setCurrent(video);
     }
 
@@ -55,7 +54,7 @@ const YouTubeApp = (props) => {
             params: {
                 q: searchTerm,
                 part: 'snippet',
-                maxResults: 2,
+                maxResults: 8,
                 order: 'relevance',
                 key: KEY
             }
@@ -116,7 +115,7 @@ const YouTubeApp = (props) => {
                 <Results vidList={getVidList2()} addCurrent={addCurrent}/>                       
             }
             {currentVid !== null &&
-                <Selection currentVid={currentVid}/>
+                <Selection currentVid={currentVid} vidList={vidList2} addCurrent={addCurrent}/>
             }
             
             
