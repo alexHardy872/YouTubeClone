@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import SideResults from './SideResults.js';
+import CommentForm from './CommentForm.js';
+import Comments from './Comments.js';
 
 const Selection = (props) => {
+    useEffect(() => {
+        findCurrentComments();
+    },[]);
+
+    const [currentComments, filterComments] = useState(null);
+
+
     function formatDate(string){
         var options = { year: 'numeric', month: 'long', day: 'numeric' };
         return new Date(string).toLocaleDateString([],options);
     }
 
+    const findCurrentComments = () => {
+        const Thesecomments = props.comments.comments.filter((comment) => comment.videoId === props.currentVid.id);
+        filterComments(Thesecomments);
+    }
    
 
     return (
@@ -41,7 +54,8 @@ const Selection = (props) => {
                       </div>
 
                       <div>
-                          <h2> Comments</h2>
+                          <CommentForm/>
+                          <Comments comments={currentComments} allReplies={props.comments.replies}/>
                       </div>
                 </div>
                 <div className="col-sm-3">

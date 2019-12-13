@@ -3,7 +3,7 @@ import React from 'react';
 const SideNav = (props) => {
 
     return (
-        <div className="nav-block">
+        <div className="nav-block bg-white">
 
             <span className="side-nav-top">
                 BROWSE YOUCLONE

@@ -4,6 +4,7 @@ import SearchBar from './SearchBar.js';
 import Results from './Results.js';
 import Selection from './Selection.js';
 import youtubeAPI from '../API/youtubeAPI.js';
+import axios from 'axios';
 
 
 
@@ -15,16 +16,40 @@ import youtubeAPI from '../API/youtubeAPI.js';
 
 
 const YouTubeApp = (props) => {
+    useEffect(() => {
+        getComments();
+    },[]);
     const [vidList, setSearchList] = useState(null);
     const [vidList2, setSearchList2] = useState(null);
     const [currentVid, setCurrent] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
     const [allComments, setComments] = useState(null);
+    
+   const getComments = () => {
+        axios.get('http://localhost:3000/collections')
+        .then((response) =>  {
+            setComments(response.data)    
+        })
+    }
 
-    const addComment = comment => {
+    const addComment = (comment, isReply) => {
+        const Comments = allComments;
+        if(isReply === false){
+            let newId = Comments.replies.length+1;
+            Comments.replies.push(comment);
+        }
+        else{
+            let newId = Comments.comments.length+1;
+            Comments.comments.push(comment);
+        }       
+        axios.put('http://localhost:3000/collections')
+    }
+
+    const addReply = comment => {
         const newComments = [...allComments, {comment} ]
         setComments(newComments);
     }
+
 
     const addCurrent = video => {
         console.log("add current video hit with "+video.snippet.title);
@@ -115,7 +140,7 @@ const YouTubeApp = (props) => {
                 <Results vidList={getVidList2()} addCurrent={addCurrent}/>                       
             }
             {currentVid !== null &&
-                <Selection currentVid={currentVid} vidList={vidList2} addCurrent={addCurrent}/>
+                <Selection comments={allComments} currentVid={currentVid} vidList={vidList2} addCurrent={addCurrent}/>
             }
             
             
