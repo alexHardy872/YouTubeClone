@@ -5,13 +5,11 @@
       {
         "id": 1,
         "videoId": "RhgWVEQ_oVQ",
-        "from": "testVideo",
         "content": "haha! Look at this muddy DAWG!"    
       },
       {
         "id": 2,
         "videoId": "RhgWVEQ_oVQ",
-        "from": "testVideo",
         "content": "this video sux"    
       }
     ],
@@ -20,14 +18,12 @@
         "id": 1,
         "replyToReply": false,
         "parentId": 1,
-        "from": "testVideo",
         "content": "YOU SUCK!"
       },
       {
         "id": 2,
         "replyToReply": true,
         "parentId": 1,
-        "from": "testVideo",
         "content": "NOOOOOOOO! YOOOOOUU SUUUUUCK!"
       }
     ]

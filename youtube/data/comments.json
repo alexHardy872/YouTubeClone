@@ -1,18 +1,165 @@
 {
-  "collections":
-  {
+  "collections": {
     "comments": [
       {
         "id": 1,
         "videoId": "RhgWVEQ_oVQ",
-        "from": "testVideo",
-        "content": "haha! Look at this muddy DAWG!"    
+        "content": "haha! Look at this muddy DAWG!"
       },
       {
         "id": 2,
         "videoId": "RhgWVEQ_oVQ",
-        "from": "testVideo",
-        "content": "this video sux"    
+        "content": "this video sux"
+      },
+      {
+        "id": 3,
+        "videoId": "RhgWVEQ_oVQ",
+        "content": "test comment!"
+      },
+      {
+        "id": 4,
+        "videoId": "RhgWVEQ_oVQ",
+        "content": "test comment 2!"
+      },
+      {
+        "id": 5,
+        "videoId": "RhgWVEQ_oVQ",
+        "content": "test comment 2!"
+      },
+      {
+        "id": 6,
+        "videoId": "RhgWVEQ_oVQ",
+        "content": "text comment 3!"
+      },
+      {
+        "id": 7,
+        "videoId": "bJkC1dpH1MI",
+        "content": "this band is awesome!"
+      },
+      {
+        "id": 8,
+        "videoId": "bJkC1dpH1MI",
+        "content": "this band suckkkks"
+      },
+      {
+        "id": 9,
+        "videoId": "bJkC1dpH1MI",
+        "content": "this band suckkkks"
+      },
+      {
+        "id": 10,
+        "videoId": "RhgWVEQ_oVQ",
+        "content": "new test comment"
+      },
+      {
+        "id": 11,
+        "videoId": "RhgWVEQ_oVQ",
+        "content": "force update!"
+      },
+      {
+        "id": 12,
+        "videoId": "RhgWVEQ_oVQ",
+        "content": "dsfsdfsdf"
+      },
+      {
+        "id": 13,
+        "videoId": "U9XLNWwmct4",
+        "content": "comment working?"
+      },
+      {
+        "id": 14,
+        "videoId": "RhgWVEQ_oVQ",
+        "content": "sdfsdfsdgsdf"
+      },
+      {
+        "id": 15,
+        "videoId": "bJkC1dpH1MI",
+        "content": "comment?"
+      },
+      {
+        "id": 16,
+        "videoId": "RhgWVEQ_oVQ",
+        "content": "COMMENT"
+      },
+      {
+        "id": 17,
+        "videoId": "RhgWVEQ_oVQ",
+        "content": "mudd dooooog"
+      },
+      {
+        "id": 18,
+        "videoId": "RhgWVEQ_oVQ",
+        "content": "mudd dooooog"
+      },
+      {
+        "id": 19,
+        "videoId": "RhgWVEQ_oVQ",
+        "content": "debugger!!!"
+      },
+      {
+        "id": 20,
+        "videoId": "RhgWVEQ_oVQ",
+        "content": "yo"
+      },
+      {
+        "id": 21,
+        "videoId": "RhgWVEQ_oVQ",
+        "content": "yo"
+      },
+      {
+        "id": 22,
+        "videoId": "RhgWVEQ_oVQ",
+        "content": "yo"
+      },
+      {
+        "id": 23,
+        "videoId": "RhgWVEQ_oVQ",
+        "content": "yo"
+      },
+      {
+        "id": 24,
+        "videoId": "RhgWVEQ_oVQ",
+        "content": "yo"
+      },
+      {
+        "id": 25,
+        "videoId": "RhgWVEQ_oVQ",
+        "content": "yo"
+      },
+      {
+        "id": 26,
+        "videoId": "RhgWVEQ_oVQ",
+        "content": "asdasdasdasd"
+      },
+      {
+        "id": 27,
+        "videoId": "RhgWVEQ_oVQ",
+        "content": "asdasdasdasd"
+      },
+      {
+        "id": 28,
+        "videoId": "RhgWVEQ_oVQ",
+        "content": "asdasdasdasdasd"
+      },
+      {
+        "id": 29,
+        "videoId": "RhgWVEQ_oVQ",
+        "content": "checkkkk"
+      },
+      {
+        "id": 30,
+        "videoId": "RhgWVEQ_oVQ",
+        "content": "wassssss"
+      },
+      {
+        "id": 31,
+        "videoId": "aWotrzyK5GA",
+        "content": "this is whack"
+      },
+      {
+        "id": 32,
+        "videoId": "RhgWVEQ_oVQ",
+        "content": "test comment!"
       }
     ],
     "replies": [
@@ -20,23 +167,26 @@
         "id": 1,
         "replyToReply": false,
         "parentId": 1,
-        "from": "testVideo",
         "content": "YOU SUCK!"
       },
       {
         "id": 2,
         "replyToReply": true,
         "parentId": 1,
-        "from": "testVideo",
         "content": "NOOOOOOOO! YOOOOOUU SUUUUUCK!"
+      },
+      {
+        "id": 3,
+        "replyToReply": false,
+        "parentId": "1",
+        "content": "no you suck!!!!!"
+      },
+      {
+        "id": 4,
+        "replyToReply": false,
+        "parentId": "1",
+        "content": "no you suck!"
       }
     ]
-
-
   }
-    
-
-
-
-
-  }
+}

@@ -19,11 +19,13 @@ const YouTubeApp = (props) => {
     useEffect(() => {
         getComments();
     },[]);
+   
     const [vidList, setSearchList] = useState(null);
     const [vidList2, setSearchList2] = useState(null);
     const [currentVid, setCurrent] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
     const [allComments, setComments] = useState(null);
+    const [,forceUpdate] = useState(0);
     
    const getComments = () => {
         axios.get('http://localhost:3000/collections')
@@ -32,23 +34,45 @@ const YouTubeApp = (props) => {
         })
     }
 
-    const addComment = (comment, isReply) => {
+
+
+    const addComment = (comment, isReply, isReplyToReply, responseTo) => {
         const Comments = allComments;
-        if(isReply === false){
+        if(isReply === true){
             let newId = Comments.replies.length+1;
-            Comments.replies.push(comment);
+            let newReply = {
+                id: newId,
+                replyToReply: false,
+                parentId: responseTo,
+                content: comment,
+            }
+
+            if(isReplyToReply === true){
+                
+                newReply.replyToReply = true;       
+            }
+            Comments.replies.push(newReply);
+         
         }
-        else{
+        else{   
             let newId = Comments.comments.length+1;
-            Comments.comments.push(comment);
+            let newComment = {
+                id: newId,
+                videoId: responseTo,
+                content: comment,
+            }
+            Comments.comments.push(newComment);
         }       
-        axios.put('http://localhost:3000/collections')
+        axios.put('http://localhost:3000/collections',{
+            comments: Comments.comments,
+            replies: Comments.replies
+        }).then((response) => {
+           getComments();
+            
+        })
     }
 
-    const addReply = comment => {
-        const newComments = [...allComments, {comment} ]
-        setComments(newComments);
-    }
+   
 
 
     const addCurrent = video => {
@@ -81,7 +105,8 @@ const YouTubeApp = (props) => {
                 part: 'snippet',
                 maxResults: 8,
                 order: 'relevance',
-                key: KEY
+                key: KEY,
+                type: 'video'
             }
         })
         
@@ -140,7 +165,7 @@ const YouTubeApp = (props) => {
                 <Results vidList={getVidList2()} addCurrent={addCurrent}/>                       
             }
             {currentVid !== null &&
-                <Selection comments={allComments} currentVid={currentVid} vidList={vidList2} addCurrent={addCurrent}/>
+                <Selection comments={allComments} addComment={addComment} currentVid={currentVid} vidList={vidList2} addCurrent={addCurrent}/>
             }
             
             

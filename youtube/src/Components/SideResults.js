@@ -10,7 +10,7 @@ const SideResults = (props) => {
         if(arr){
             return (
                 props.vidList.vidList2.map((video) => {
-                    return <VideoResultSmall addCurrent={props.addCurrent} video={video} key={video.id.videoId}/>
+                    return <VideoResultSmall addCurrent={props.addCurrent} video={video} key={video.id}/>
                     })) }
         else{
             return <h2>Search to populate the list!</h2>

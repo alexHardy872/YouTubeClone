@@ -6,6 +6,7 @@ import Comments from './Comments.js';
 const Selection = (props) => {
     useEffect(() => {
         findCurrentComments();
+      
     },[]);
 
     const [currentComments, filterComments] = useState(null);
@@ -17,6 +18,8 @@ const Selection = (props) => {
     }
 
     const findCurrentComments = () => {
+       
+        console.log(currentComments, props.comments.comments);
         const Thesecomments = props.comments.comments.filter((comment) => comment.videoId === props.currentVid.id);
         filterComments(Thesecomments);
     }
@@ -32,9 +35,9 @@ const Selection = (props) => {
                         width="840"
                         height="480" 
                         src={'https://www.youtube.com/embed/'+props.currentVid.id}
-                        frameborder="5"
+                        frameBorder="5"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen
+                        allowFullScreen
                       ></iframe>
                       <div className="videoInfo">
                           
@@ -54,8 +57,8 @@ const Selection = (props) => {
                       </div>
 
                       <div>
-                          <CommentForm/>
-                          <Comments comments={currentComments} allReplies={props.comments.replies}/>
+                          <CommentForm addComment={props.addComment} comments={currentComments} video={props.currentVid}/>
+                          <Comments comments={currentComments} allReplies={props.comments.replies} addComment={props.addComment}/>
                       </div>
                 </div>
                 <div className="col-sm-3">
