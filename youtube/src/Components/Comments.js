@@ -3,14 +3,20 @@ import Comment from './Comment.js';
 
 const Comments = (props) => {
 
+    const getCount = () => {
+        let count = props.comments.length + props.allReplies.length;
+        return count;
+    }
+
 
     const renderItems = (arr) => {
        
         if(arr){
             return (
+                
                 props.comments.map((comment) => {
                    
-                    return (<Comment addComment={props.addComment} currentComment={comment} key={comment.id} allReplies={props.allReplies}/>
+                    return (<Comment addComment={props.addComment} currentComment={comment} key={comment.id} allReplies={props.allReplies} video={props.video}/>
 
             )}))}
         else{
@@ -20,8 +26,10 @@ const Comments = (props) => {
 
 
     return (
-        <div>
-            <h1> Comments Here!</h1>
+        <div className="comments-container">
+            
+            <div> <h2>Comments ({getCount()})</h2></div>
+            
             {renderItems(props.comments)}
         </div>
     )

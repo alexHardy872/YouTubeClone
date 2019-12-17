@@ -4,12 +4,14 @@ import CommentForm from './CommentForm.js';
 import Comments from './Comments.js';
 
 const Selection = (props) => {
-    useEffect(() => {
-        findCurrentComments();
+    // useEffect(() => {
+    //     console.log("find comments");
+    //     findCurrentComments();
       
-    },[]);
 
-    const [currentComments, filterComments] = useState(null);
+    // },[]);
+
+    //const [currentComments, filterComments] = useState(null);
 
 
     function formatDate(string){
@@ -17,11 +19,17 @@ const Selection = (props) => {
         return new Date(string).toLocaleDateString([],options);
     }
 
+   
+
     const findCurrentComments = () => {
-       
-        console.log(currentComments, props.comments.comments);
         const Thesecomments = props.comments.comments.filter((comment) => comment.videoId === props.currentVid.id);
-        filterComments(Thesecomments);
+       // filterComments(Thesecomments);
+       return Thesecomments;
+    }
+
+    const findCurrentReplies = () => {
+        const replies = props.comments.replies.filter((reply) => reply.videoId === props.currentVid.id);
+        return replies;
     }
    
 
@@ -57,8 +65,9 @@ const Selection = (props) => {
                       </div>
 
                       <div>
-                          <CommentForm addComment={props.addComment} comments={currentComments} video={props.currentVid}/>
-                          <Comments comments={currentComments} allReplies={props.comments.replies} addComment={props.addComment}/>
+                          
+                          <CommentForm addComment={props.addComment} video={props.currentVid}/>
+                          <Comments comments={findCurrentComments()} allReplies={findCurrentReplies()} addComment={props.addComment} video={props.currentVid}/>
                       </div>
                 </div>
                 <div className="col-sm-3">

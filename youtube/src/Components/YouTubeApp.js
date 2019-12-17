@@ -17,6 +17,7 @@ import axios from 'axios';
 
 const YouTubeApp = (props) => {
     useEffect(() => {
+        console.log("use effect YT");
         getComments();
     },[]);
    
@@ -28,6 +29,7 @@ const YouTubeApp = (props) => {
     const [,forceUpdate] = useState(0);
     
    const getComments = () => {
+    console.log("get comments");
         axios.get('http://localhost:3000/collections')
         .then((response) =>  {
             setComments(response.data)    
@@ -36,7 +38,8 @@ const YouTubeApp = (props) => {
 
 
 
-    const addComment = (comment, isReply, isReplyToReply, responseTo) => {
+    const addComment = (comment, isReply, isReplyToReply, responseTo, videoId = "0") => {
+       
         const Comments = allComments;
         if(isReply === true){
             let newId = Comments.replies.length+1;
@@ -44,6 +47,7 @@ const YouTubeApp = (props) => {
                 id: newId,
                 replyToReply: false,
                 parentId: responseTo,
+                videoId: videoId,
                 content: comment,
             }
 
@@ -67,6 +71,7 @@ const YouTubeApp = (props) => {
             comments: Comments.comments,
             replies: Comments.replies
         }).then((response) => {
+           console.log("get comments from promise?")
            getComments();
             
         })
@@ -76,7 +81,6 @@ const YouTubeApp = (props) => {
 
 
     const addCurrent = video => {
-        console.log("add current video hit with "+video.snippet.title);
         setCurrent(video);
     }
 
@@ -97,7 +101,7 @@ const YouTubeApp = (props) => {
     }
     
     const getResponse = async (searchTerm) => {
-        console.log("getResponse hit", "search term ="+searchTerm);
+        //console.log("getResponse hit", "search term ="+searchTerm);
         const KEY = process.env.REACT_APP_YOUTUBE_KEY;
         const response = await youtubeAPI.get('search?', {
             params: {
@@ -125,15 +129,15 @@ const YouTubeApp = (props) => {
     };
 
     const fullVideoInfoArray = async (videos) => {
-        console.log(videos);
+        //console.log(videos);
         let newArr = [];
         for(let i = 0 ; i < videos.length ; i++){
             let vidId = videos[i].id;
             let response =  await getResponse2(vidId);
-            console.log(response);
+            //console.log(response);
             newArr.push(response.items[0]);
         }
-        console.log(newArr);
+        //console.log(newArr);
 
         setSearchList2({
             vidList2: newArr
