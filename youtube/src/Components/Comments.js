@@ -12,11 +12,12 @@ const Comments = (props) => {
     const renderItems = (arr) => {
        
         if(arr){
+            arr.reverse();
             return (
                 
-                props.comments.map((comment) => {
+                arr.map((comment) => {
                    
-                    return (<Comment addComment={props.addComment} currentComment={comment} key={comment.id} allReplies={props.allReplies} video={props.video}/>
+                    return (<Comment vote={props.vote} addComment={props.addComment} currentComment={comment} key={comment.id} allReplies={props.allReplies} video={props.video}/>
 
             )}))}
         else{

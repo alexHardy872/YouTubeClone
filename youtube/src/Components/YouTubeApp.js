@@ -36,7 +36,43 @@ const YouTubeApp = (props) => {
         })
     }
 
+    const findIndex = (arr, comment) => {
+        for(let i = 0; i< arr.length; i++){
+            if (arr[i].id == comment.id){
+                return i;
+            }
+        }
+        return -1;
+    }
 
+    const changeLikes = (comment, likeOrDislike, isReply) => {
+        let Comments = allComments;
+        if(isReply==true){
+            let indexOfReply = findIndex(Comments.replies, comment);
+            if(likeOrDislike === "up"){
+                Comments.replies[indexOfReply].likes+=1;
+            }
+            else{
+                Comments.replies[indexOfReply].dislikes+=1;
+            }
+        }
+        else{
+            let indexOfComment = findIndex(Comments.comments, comment);
+            if(likeOrDislike === "up"){
+                Comments.comments[indexOfComment].likes+=1;
+            }
+            else{
+                Comments.comments[indexOfComment].dislikes+=1;
+            }
+        }
+        axios.put('http://localhost:3000/collections',{
+            comments: Comments.comments,
+            replies: Comments.replies
+        }).then((response) => {
+           console.log("get comments from promise?")
+           getComments();          
+        })     
+    }
 
     const addComment = (comment, isReply, isReplyToReply, responseTo, videoId = "0") => {
        
@@ -49,6 +85,8 @@ const YouTubeApp = (props) => {
                 parentId: responseTo,
                 videoId: videoId,
                 content: comment,
+                likes: 0,
+                dislikes: 0
             }
 
             if(isReplyToReply === true){
@@ -64,6 +102,8 @@ const YouTubeApp = (props) => {
                 id: newId,
                 videoId: responseTo,
                 content: comment,
+                likes: 0,
+                doslike: 0
             }
             Comments.comments.push(newComment);
         }       
@@ -169,7 +209,7 @@ const YouTubeApp = (props) => {
                 <Results vidList={getVidList2()} addCurrent={addCurrent}/>                       
             }
             {currentVid !== null &&
-                <Selection comments={allComments} addComment={addComment} currentVid={currentVid} vidList={vidList2} addCurrent={addCurrent}/>
+                <Selection vote={changeLikes} comments={allComments} addComment={addComment} currentVid={currentVid} vidList={vidList2} addCurrent={addCurrent}/>
             }
             
             

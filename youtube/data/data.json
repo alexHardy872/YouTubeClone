@@ -1,16 +1,19 @@
 {
-  "collections":
-  {
+  "collections": {
     "comments": [
       {
         "id": 1,
         "videoId": "RhgWVEQ_oVQ",
-        "content": "haha! Look at this muddy DAWG!"    
+        "content": "haha! Look at this muddy DAWG!",
+        "likes": 3,
+        "dislikes": 10
       },
       {
         "id": 2,
         "videoId": "RhgWVEQ_oVQ",
-        "content": "this video sux"    
+        "content": "Comment!",
+        "likes": 1,
+        "dislikes": 1
       }
     ],
     "replies": [
@@ -18,21 +21,20 @@
         "id": 1,
         "replyToReply": false,
         "parentId": 1,
-        "content": "YOU SUCK!"
+        "videoId": "RhgWVEQ_oVQ",
+        "content": "YOU SUCK!",
+        "likes": 0,
+        "dislikes": 0
       },
       {
         "id": 2,
-        "replyToReply": true,
-        "parentId": 1,
-        "content": "NOOOOOOOO! YOOOOOUU SUUUUUCK!"
+        "replyToReply": false,
+        "parentId": "1",
+        "videoId": "RhgWVEQ_oVQ",
+        "content": "YOU MUD DOG!",
+        "likes": 0,
+        "dislikes": 0
       }
     ]
-
-
   }
-    
-
-
-
-
-  }
+}

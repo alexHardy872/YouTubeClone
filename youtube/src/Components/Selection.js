@@ -67,7 +67,7 @@ const Selection = (props) => {
                       <div>
                           
                           <CommentForm addComment={props.addComment} video={props.currentVid}/>
-                          <Comments comments={findCurrentComments()} allReplies={findCurrentReplies()} addComment={props.addComment} video={props.currentVid}/>
+                          <Comments vote={props.vote} comments={findCurrentComments()} allReplies={findCurrentReplies()} addComment={props.addComment} video={props.currentVid}/>
                       </div>
                 </div>
                 <div className="col-sm-3">

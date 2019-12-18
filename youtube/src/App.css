@@ -252,6 +252,47 @@ border: 2pt solid purple;
 }
 
 .comment-div{
+  min-height: 70px;
 
 }
+
+.comment-image{
+  float: left;
+  height: 68px;
+  width: auto;
+}
+
+.reply-div{
+  padding-left: 60px;
+  min-height: 70px;
+}
+
+.reply-form{
+  float: right;
+}
+
+.like-buttons{
+  width: 30px;
+  height: 70px;
+  float: left;
+}
+
+.arrow{
+  height: 100%;
+  width: auto;
+  cursor: pointer;
+}
+
+.arrow-container{
+  height: 20%;
+}
+
+.num-container{
+  font-size: 60%;
+  text-align: middle;
+  padding-top: 10px;
+
+}
+
+
 

@@ -17,6 +17,7 @@ const CommentForm = (props) => {
                 <input type='hidden' value={props.video.id}/>
                 <button type='submit'>POST COMMENT</button>
             </form>
+        
         </div>
     )
 }

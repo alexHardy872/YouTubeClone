@@ -14,7 +14,7 @@ const ReplyForm = (props) => {
   
 
     return (
-        <div>
+        <div className='reply-form'>
              <form onSubmit={handleSubmit}>
                 <input type='text' name='content'></input>
                 <input type='hidden' value={props.response}/>
@@ -22,6 +22,7 @@ const ReplyForm = (props) => {
                 <input type='hidden' value={props.video.id}/>
                 <button type='submit'>REPLY</button>
             </form>
+           
         </div>
     )
 }
